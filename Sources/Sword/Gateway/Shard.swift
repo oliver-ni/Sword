@@ -101,7 +101,7 @@ class Shard: GatewayHandler {
   /// Handles binary being sent through the gateway
   ///
   /// - parameter data: Data that was sent through the gateway
-  func handleBinary(_ data: Data) {
+  func handleBinary(_ data: ByteBuffer) {
     buffer.append(contentsOf: data)
     
     guard isBufferComplete else {

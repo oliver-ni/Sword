@@ -30,7 +30,7 @@ protocol GatewayHandler : AnyObject {
   /// Defines what to when data is received as binary
   ///
   /// - parameter data: The data that was received from the gateway
-  func handleBinary(_ data: Data)
+  func handleBinary(_ data: ByteBuffer)
   
   /// Defines what to do when the gateway closes on us
   func handleClose(_ error: WebSocketErrorCode)
@@ -71,11 +71,11 @@ extension GatewayHandler {
       self.session = ws
       
       ws.onBinary { _, data in
-        self.handleBinary(Data(data))
+        self.handleBinary(data)
       }
       
-      ws.onCloseCode { code in
-        self.handleClose(code)
+      ws.onClose.whenSuccess {
+        self.handleClose(ws.closeCode!)
       }
       
       ws.onText { _, text in
