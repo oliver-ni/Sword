@@ -63,6 +63,7 @@ extension GatewayHandler {
     )
     
     let ws = client.connect(
+      scheme: "ws",
       host: host,
       port: url.port ?? 443,
       path: url.absoluteString
