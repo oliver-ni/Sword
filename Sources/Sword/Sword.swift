@@ -8,8 +8,8 @@
 
 import Foundation
 import NIO
-import NIOHTTPClient
-import NIOWebSocketClient
+import AsyncHTTPClient
+import WebSocketKit
 
 /// Swift meets Discord
 open class Sword {

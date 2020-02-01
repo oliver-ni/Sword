@@ -8,7 +8,7 @@
 
 import Foundation
 import NIOWebSocket
-import NIOWebSocketClient
+import WebSocketKit
 import NIOSSL
 
 /// Represents a WebSocket session for Discord

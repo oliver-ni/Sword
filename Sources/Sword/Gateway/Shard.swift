@@ -8,7 +8,7 @@
 
 import Foundation
 import NIOWebSocket
-import NIOWebSocketClient
+import WebSocketKit
 import zlib
 
 /// Shard - Represents a unique session to a portion of the guilds a bot is

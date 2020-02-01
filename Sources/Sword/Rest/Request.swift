@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NIOHTTPClient
+import AsyncHTTPClient
 
 extension Sword {
   static let apiVersion = "v7"
