@@ -37,7 +37,7 @@ extension Sword {
     
     let client = HTTPClient(eventLoopGroupProvider: .shared(worker))
     
-    client.execute(request: request).whenComplete { [unowned self] result in
+    return client.execute(request: request).whenComplete { [unowned self] result in
       switch result {
       case .failure(let error):
         self.handleRequestError(error)
