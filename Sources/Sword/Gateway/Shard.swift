@@ -48,7 +48,7 @@ class Shard: GatewayHandler {
   var lastSeq: Int?
   
   /// The WebSocket session
-  var session: WebSocketClient.Socket?
+  var session: WebSocket?
   
   /// Used to resume connections
   var sessionId: String?

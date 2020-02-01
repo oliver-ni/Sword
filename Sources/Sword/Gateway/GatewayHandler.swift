@@ -14,7 +14,7 @@ import NIOSSL
 /// Represents a WebSocket session for Discord
 protocol GatewayHandler : AnyObject {
   /// Internal WebSocket session
-  var session: WebSocketClient.Socket? { get set }
+  var session: WebSocket? { get set }
 
   /// Sword class
   var sword: Sword { get }
@@ -65,7 +65,7 @@ extension GatewayHandler {
     let ws = client.connect(
       host: host,
       port: url.port ?? 443,
-      uri: url.absoluteString
+      path: url.absoluteString
     ) { [unowned self] ws in
       self.session = ws
       
