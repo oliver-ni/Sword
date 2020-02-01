@@ -11,6 +11,6 @@ import NIO
 extension Sword {
   /// Get's the bot's initial gateway information for the websocket
   public func getGateway() throws -> EventLoopFuture<GatewayInfo> {
-    return try request(.gateway, then: {})
+    return try request(.gateway, then: {_, _ in })
   }
 }
