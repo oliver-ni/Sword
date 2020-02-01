@@ -121,9 +121,6 @@ extension Sword {
 
     let task = self.session.dataTask(with: request) {
       [unowned self, unowned sema] data, response, error in
-      
-      let response = response as! HTTPURLResponse
-      let headers = response.allHeaderFields
 
       if error != nil {
         #if !os(Linux)
@@ -134,6 +131,9 @@ extension Sword {
         sema.signal()
         return
       }
+      
+      let response = response as! HTTPURLResponse
+      let headers = response.allHeaderFields
 
       if rateLimited {
         self.handleRateLimitHeaders(
